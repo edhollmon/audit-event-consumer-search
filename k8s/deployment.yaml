@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: audit-event-consumer-search-deployment
+  labels:
+    app: audit-event-consumer-search
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: audit-event-consumer-search
+  template:
+    metadata:
+      labels:
+        app: audit-event-consumer-search
+    spec:
+      containers:
+      - name: audit-event-consumer-search
+        image: ehollmon/audit-event-consumer-search:1.0
