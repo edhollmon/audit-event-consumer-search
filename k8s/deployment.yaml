@@ -16,7 +16,11 @@ spec:
     spec:
       containers:
       - name: audit-event-consumer-search
-        image: ehollmon/audit-event-consumer-search:1.1
+        image: ehollmon/audit-event-consumer-search:1.5
         env:
         - name: KAFKA_BROKER
           value: "kafka:9092"
+        - name: ELASTICSEARCH_NODE
+          value: "http://elasticsearch:9200"
+        # - name: ELASTICSEARCH_API_KEY
+        #   value: ""   # or omit if you don’t want auth
