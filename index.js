@@ -3,7 +3,7 @@ import { Client } from '@elastic/elasticsearch';
 import 'dotenv/config';
 
 const clientId = 'audit-event-consumer-search'
-const brokers = ['localhost:9092']
+const brokers = [process.env.KAFKA_BROKER || 'kafka:9092' || 'localhost:9092']
 const groupId = 'audit-event-search';
 const topic = 'audit-event-topic';
 

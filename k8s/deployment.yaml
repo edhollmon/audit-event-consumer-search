@@ -16,4 +16,7 @@ spec:
     spec:
       containers:
       - name: audit-event-consumer-search
-        image: ehollmon/audit-event-consumer-search:1.0
+        image: ehollmon/audit-event-consumer-search:1.1
+        env:
+        - name: KAFKA_BROKER
+          value: "kafka:9092"
